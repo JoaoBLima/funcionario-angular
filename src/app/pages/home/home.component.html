@@ -1,0 +1,45 @@
+<div class="funcionario-box">
+    <button routerLink="/cadastro">Cadastrar novo Funcionário</button>
+    <div class="input-box">
+        <label>Procurar:</label>
+        <input type="text" placeholder="Qual registro está buscando?" (input)="search($event)">
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Nome</th>
+            <th>SobreNome</th>
+            <th>Departamento</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let funcionario of funcionarios">
+        <tr>
+            <td>
+                <div *ngIf="funcionario.ativo == true; else inativo">
+                    <img src="assets/images/red-circle.png" alt="" width="20" height="20">
+                </div>
+              <ng-template #inativo>
+                <img src="assets/images/icone-cercle-rempli-vert.png" alt="" width="20" height="20">
+              </ng-template>
+
+
+            </td>
+            <td>{{funcionario.nome}}</td>
+            <td>{{funcionario.sobrenome}}</td>
+            <td>{{funcionario.departamento}}</td>
+            <td>
+                <button routerLink="/editar/{{funcionario.id}}">Editar</button>
+                <button>Detalhes</button>
+            </td>
+            <td>
+                <button>Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
