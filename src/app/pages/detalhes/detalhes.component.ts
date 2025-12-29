@@ -3,9 +3,12 @@ import { FuncionarioService } from '../../services/funcionario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Funcionario } from '../../models/Funcionarios';
 import { CommonModule } from '@angular/common';
+import { MatButton } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { MatCard } from "@angular/material/card";
 @Component({
   selector: 'app-detalhes',
-  imports: [CommonModule],
+  imports: [CommonModule, MatButton, MatInputModule, MatCard],
   templateUrl: './detalhes.component.html',
   styleUrl: './detalhes.component.css'
 })

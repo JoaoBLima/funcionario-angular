@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Funcionario } from '../../models/Funcionarios';
 import { RouterLink } from "@angular/router";
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @Component({
   selector: 'app-funcionario-form',
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink,MatButtonModule,MatCardModule,MatInputModule,MatSelectModule],
   templateUrl: './funcionario-form.component.html',
   styleUrl: './funcionario-form.component.css'
 })
